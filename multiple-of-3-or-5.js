@@ -1,3 +1,6 @@
+//Other solution
+
+// This recursive solution (?) runs out of stack
 function solution(number) {
     let sum = 0;
     let counter = 1;
