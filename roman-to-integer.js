@@ -13,7 +13,7 @@
 // Function: Translation
 //  1. Break input into sub-units => each character of input string is a sub-unit
 //  2. Translate sub-units into sub-integers => need dictionary
-//  3. Determine whether sub-unit is added or subtracted from sum => determined by rules that govern Roman numeral notation
+//  3. Determine whether sub-unit is added to or subtracted from sum => determined by rules that govern Roman numeral notation
 //  4. Determine output => sum of sub-integers
 
 // Rules that govern Roman numeral notation
