@@ -10,7 +10,7 @@
 //  2. Min. one solution? => yes, see 2. above.
 // => There is always a return value & return value is always an integer
 
-// Function: Translation
+// Algorithm: Translation
 //  1. Break input into sub-units => each character of input string is a sub-unit
 //  2. Translate sub-units into sub-integers => need dictionary
 //  3. Determine whether sub-unit is added to or subtracted from sum => determined by rules that govern Roman numeral notation
