@@ -14,6 +14,7 @@
 //  1. Break input into sub-units => each character of input string is a sub-unit
 //  2. Translate sub-units into sub-integers => need dictionary
 //  3. Determine whether sub-unit is added to or subtracted from sum => determined by rules that govern Roman numeral notation
+//      - Background assumption: Given "LIX" for example, it doesn't matter whether we subtract 1 from 10, or from 50 and then add 10 (Calculating sum from left to right);
 //  4. Determine output => sum of sub-integers
 
 // Rules that govern Roman numeral notation
