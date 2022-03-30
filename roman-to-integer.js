@@ -11,17 +11,16 @@
 // => There is always a return value & return value is always an integer
 
 // Function: Translation
-//  1. Break input into sub-units (determine repetitive task) => need to understand what constitutes a sub-unit => criterion: "translatability" => determined by dictionary + rules that govern Roman numeral notation
+//  1. Break input into sub-units => each character of string  is a sub-unit
 //  2. Translate sub-units into sub-integers => need dictionary
-//  3. Determine output => sum of sub-integers
+//  3. Determine whether sub-unit is added or subtracted from sum => determined by rules that govern Roman numeral notation
+//  4. Determine output => sum of sub-integers
 
 // Rules that govern Roman numeral notation
-//  1. Largest to smallest from left to right
-//  2. Addition
-//  3. Exception to 2: 6 instances where subtraction is used instead.
+//  1. Addition: All sub-units are added to build to final sum
+//  2. Exception (to 1): 6 instances where subtraction is used instead => Ordered largest to smallest from left to right; if a sub-unit does not follow that rule, it is subtracted from sum
 
-
-// #1 Solution: Brute Force/Hard coded (Direct integration of rules that govern Roman numeral notation (= exceptions))
+// #1 Solution: Exceptions hard coded
 
 const dict = {
     I: 1,
@@ -30,49 +29,49 @@ const dict = {
     L: 50,
     C: 100,
     D: 500,
-    M: 1000
-}
+    M: 1000,
+};
 
-const romanToInt = function(s) {
+const romanToInt = function (s) {
     let sum = 0;
-    for(let i = 0; i < s.length; i++) {
-        switch(s[i]) {
-            case 'I':
-                if (dict[s[i+1]] > 1) {
+    for (let i = 0; i < s.length; i++) {
+        switch (s[i]) {
+            case "I":
+                if (dict[s[i + 1]] > 1) {
                     sum -= 1;
                 } else {
                     sum += 1;
                 }
                 break;
-            case 'V':
+            case "V":
                 sum += 5;
                 break;
-            case 'X':
-                if (dict[s[i+1]] > 10) {
+            case "X":
+                if (dict[s[i + 1]] > 10) {
                     sum -= 10;
                 } else {
                     sum += 10;
                 }
                 break;
-            case 'L':
+            case "L":
                 sum += 50;
                 break;
-            case 'C':
-                if (dict[s[i+1]] > 100) {
+            case "C":
+                if (dict[s[i + 1]] > 100) {
                     sum -= 100;
                 } else {
-                    sum += 100
+                    sum += 100;
                 }
                 break;
-            case 'D':
+            case "D":
                 sum += 500;
                 break;
-            case 'M':
+            case "M":
                 sum += 1000;
         }
     }
     return sum;
-}
+};
 
 // #2 Solution: Utilise pattern behind the exceptions
 
