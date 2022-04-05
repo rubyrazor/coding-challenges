@@ -25,7 +25,7 @@
     var isClosingBracket = function (char) {
         return pairs.hasOwnProperty(char);
     };
-    console.log(isValid('([])'));
+    console.log(isValid('([])('));
 })();
 /*
 // #2 SOLUTION (Only supported in ES5 and higher: uses a string in a 'for...of' statement)
